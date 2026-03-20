@@ -75,16 +75,14 @@ local function startBlati()
     blatiLoop = task.spawn(function()
         while getgenv().Blati do
             if sessionID and humanoid then
-                throwRemote:FireServer(0, sessionID)
+                throwRemote:FireServer(0.017203017487190664, sessionID)
                 task.wait(0.00001)
                 minigameStarted:FireServer(sessionID)
                 task.wait(0.00001)
                 local successArgs = {
-                    ["duration"] = math.random(7.5, 12.5),
-                    ["result"] = "SUCCESS",
-                    ["insideRatio"] = 0.8 + (math.random(3, 18) / 100),
-                    ["catchType"] = "SECRET",
-                    ["isSecret"] = true
+                    duration = 2.2980389329604805,
+                    result = "SUCCESS",
+                    insideRatio = 0.8
                 }
                 reelFinished:FireServer(successArgs, sessionID)
                 fishCaught = fishCaught + 1
